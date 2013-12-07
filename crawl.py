@@ -42,8 +42,6 @@ for anbie in xrange(1,5):
   for shuemen in shuemen_hash:
     for shuemen2 in shuemen_hash[shuemen]:
       total_page = 0
-      #print("./cmd-%s %d %s %s %d > .tmp"%(shuemen,anbie,shuemen,shuemen2,0))
-      #sys.exit(0)
       proc = subprocess.Popen("./cmd-%s %d %s %s %d > .tmp"%(shuemen, anbie,shuemen,shuemen2,0),shell=True)
       proc.communicate(None)
       ret = re.search(r'">共(\d+)頁\(',open(".tmp","r").read())
